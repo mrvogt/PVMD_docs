@@ -1,7 +1,0 @@
-PVMD Toolbox
-============
-
-.. automodule:: pvmd
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,5 +1,5 @@
 ==========================
-PMVD Toolbox Documentation
+PVMD Toolbox Documentation
 ==========================
 
 Welcome to PVMD's Documentation.
