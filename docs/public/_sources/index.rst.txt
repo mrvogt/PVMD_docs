@@ -1,0 +1,27 @@
+==========================
+PMVD Toolbox Documentation
+==========================
+
+Welcome to PVMD's Documentation.
+
+Table of Contents
+=================
+.. toctree::
+   :maxdepth: 2
+   :caption: Getting started
+
+   getting_started/access_guide
+   user_guide/full_manual
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contributing
+
+   develop/style_guide
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API references
+
+   api/modules

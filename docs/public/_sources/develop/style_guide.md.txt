@@ -1,0 +1,138 @@
+---
+title: Style guide for the PMVD Toolbox
+author: Alba Alcañiz
+version: 1.1
+---
+
+# Style guide for the PVMD toolbox
+
+
+## Introduction
+
+This document gives coding conventions for the Matlab code present in
+the PVMD toolbox and that need to be followed if any modification is to
+be done to the tool. This document is based on the Python coding
+convention PEP8 adapted to Matlab following recommendations from members
+of the PVMD group and on the scientific computing rules given by Wilson
+et al. (Wilson et al., 2014).
+
+The PVMD toolbox is the result of many interactions between people. It
+is important to follow the conventions stated here so that the code can
+be easily read and understood by other programmers. This way the
+improvements on the toolbox can be better implemented.
+
+## Code Lay-out
+
+### Indentation
+
+Use four spaces or one tab per indentation level. Indentation is
+necessary to know where and if/for/while command starts and finishes.
+Functions do not need indentation.
+
+### Maximum line length
+
+Try to limit the length of the code to 76 characters (do not trespass
+the line that is automatically drawn on Matlab) especially for comments,
+although it is not strict. Exceptions are when calling and defining long
+functions.
+
+### Blank lines
+
+Functions should be separated by two blank lines between them. Single
+blank lines can be employed inside functions to separate sections
+between them.
+
+## Comments
+
+Comments that contradict the code are worse than no comments. Therefore,
+keep the comments up-to-date when the code changes! Comments should be
+complete sentences, clear and easily understandable.
+
+When defining variables, inline comments define the variable names and
+their units. Inline comments can also be useful when performing an
+operation whose meaning is not trivial. For instance in the example
+below, the first comment would be useless while the second can be
+useful.
+
+```matlab
+x = x + 1; %Increment x
+
+x = x + 1; %Compensate for border
+```
+
+Functions need to have a block of comments at the beginning explaining
+what they do, their inputs and outputs. The first comment line, should
+be a summary of the function. The following lines would perform a detail
+explanation of it. A brief description of the input and output arguments
+of the function would follow in the next lines. Finally, the authors and
+the project of which that code belongs would be stated.
+
+## Naming conventions
+
+When naming, the convention to be employed is lowercase_with_underscore.
+This applies to both the functions and the variables names. Make names
+consistent, distinctive, and meaningful. We understand that it is
+annoying to have long names while coding, but once the code is finished,
+all the variables can be easily substituted in matlab. So it is ok to
+employ v as the velocity on your code while you are working on it, but
+once it is finished, substitute the variable `v` by `wind_velocity`.
+
+## Example of good coding
+
+```matlab
+function [sky_temperature] = sky_temperature_calc(ambient_temperature, cloud_coverage)
+% Example function that uses blank lines and indentation. This function
+% pretends to show new users of the PVMD toolbox the correct use of
+% blank lines between sections and of indentation when employing if
+% statements.
+% As an example, the sky temperature is calculated following the Solar
+% Book by Smets et al.
+%
+% ambient_temperature Temperature of the ambient at a certain instant
+% in degrees
+% cloud_coverage Cloud coverage of the sky at the same instant in okta
+%
+% sky_temperature Temperature of the sky at the same instant in degrees
+%
+% Author: Alba Alcaniz
+% For PVMD toolbox style guide
+
+% Convert the ambient temperature to Kelvin
+
+ambient_temperature = ambient_temperature + 273.15;
+
+if cloud_coverage > 8 || cloud_coverage < 0
+    disp("Wrong input cloud coverage")
+elseif cloud_coverage > 6
+    sky_temperature = ambient_temperature;
+else
+    sky_temperature = 0.0552*ambient_temperature^(3/2);
+end
+
+% Convert the temperature back to degrees
+sky_temperature = sky_temperature - 273.15;
+
+end
+
+function [outputArg1,outputArg2] = random_function(inputArg1,inputArg2)
+
+% This functions shows the two blank lines space to be left between the
+% end of a function and the beginning of the next one.
+```
+
+## General traits of good coding
+
+programs should limit the total number of items to be remembered to
+accomplish a task. Break programs up into easily understood functions,
+each of which conducts a single, easily understood, task. This serves to
+make each piece of the program easier to understand in the same way that
+breaking up a scientific paper using sections and paragraphs makes it
+easier to read.
+
+Let the computer do the work: avoid repetition make the computer repeat
+tasks (2a) and save recent commands in a file for re-use (2b).
+
+Use a version control system? Use [Git](http://git-scm.com) and [Gitlab](https://gitlab.tudelft.nl/users/sign_in) so that many people can interact at the same time with the code and the most recent version of the PVMD toolbox is available.
+
+Plan for mistakes. Add assertion to the code to make sure that the
+inputs are what they should be.
