@@ -440,9 +440,9 @@ their units. Inline comments can also be useful when performing an
 operation whose meaning is not trivial. For instance in the example
 below, the first comment would be useless while the second can be
 useful.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c">%Increment x</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c">%Increment x</span>
 
-<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c">%Compensate for border</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c">%Compensate for border</span>
 </pre></div>
 </div>
 <p>Functions need to have a block of comments at the beginning explaining
@@ -464,44 +464,44 @@ once it is finished, substitute the variable <code class="docutils literal notra
 </section>
 <section id="example-of-good-coding">
 <h2>Example of good coding<a class="headerlink" href="#example-of-good-coding" title="Permalink to this headline">#</a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[sky_temperature]<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">sky_temperature_calc</span><span class="p">(</span>ambient_temperature, cloud_coverage<span class="p">)</span><span class="w"></span>
-<span class="c">% Example function that uses blank lines and indentation. This function</span><span class="w"></span>
-<span class="c">% pretends to show new users of the PVMD toolbox the correct use of</span><span class="w"></span>
-<span class="c">% blank lines between sections and of indentation when employing if</span><span class="w"></span>
-<span class="c">% statements.</span><span class="w"></span>
-<span class="c">% As an example, the sky temperature is calculated following the Solar</span><span class="w"></span>
-<span class="c">% Book by Smets et al.</span><span class="w"></span>
-<span class="c">%</span><span class="w"></span>
-<span class="c">% ambient_temperature Temperature of the ambient at a certain instant</span><span class="w"></span>
-<span class="c">% in degrees</span><span class="w"></span>
-<span class="c">% cloud_coverage Cloud coverage of the sky at the same instant in okta</span><span class="w"></span>
-<span class="c">%</span><span class="w"></span>
-<span class="c">% sky_temperature Temperature of the sky at the same instant in degrees</span><span class="w"></span>
-<span class="c">%</span><span class="w"></span>
-<span class="c">% Author: Alba Alcaniz</span><span class="w"></span>
-<span class="c">% For PVMD toolbox style guide</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[sky_temperature]<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">sky_temperature_calc</span><span class="p">(</span>ambient_temperature, cloud_coverage<span class="p">)</span>
+<span class="c">% Example function that uses blank lines and indentation. This function</span>
+<span class="c">% pretends to show new users of the PVMD toolbox the correct use of</span>
+<span class="c">% blank lines between sections and of indentation when employing if</span>
+<span class="c">% statements.</span>
+<span class="c">% As an example, the sky temperature is calculated following the Solar</span>
+<span class="c">% Book by Smets et al.</span>
+<span class="c">%</span>
+<span class="c">% ambient_temperature Temperature of the ambient at a certain instant</span>
+<span class="c">% in degrees</span>
+<span class="c">% cloud_coverage Cloud coverage of the sky at the same instant in okta</span>
+<span class="c">%</span>
+<span class="c">% sky_temperature Temperature of the sky at the same instant in degrees</span>
+<span class="c">%</span>
+<span class="c">% Author: Alba Alcaniz</span>
+<span class="c">% For PVMD toolbox style guide</span>
 
-<span class="c">% Convert the ambient temperature to Kelvin</span><span class="w"></span>
+<span class="c">% Convert the ambient temperature to Kelvin</span>
 
-<span class="n">ambient_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ambient_temperature</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">273.15</span><span class="p">;</span><span class="w"></span>
+<span class="n">ambient_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ambient_temperature</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">273.15</span><span class="p">;</span>
 
-<span class="k">if</span><span class="w"> </span><span class="n">cloud_coverage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">cloud_coverage</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Wrong input cloud coverage&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="k">elseif</span><span class="w"> </span><span class="n">cloud_coverage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
-<span class="w">    </span><span class="n">sky_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ambient_temperature</span><span class="p">;</span><span class="w"></span>
-<span class="k">else</span><span class="w"></span>
-<span class="w">    </span><span class="n">sky_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.0552</span><span class="o">*</span><span class="n">ambient_temperature</span>^<span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">cloud_coverage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">cloud_coverage</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Wrong input cloud coverage&quot;</span><span class="p">)</span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">cloud_coverage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6</span>
+<span class="w">    </span><span class="n">sky_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ambient_temperature</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">sky_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.0552</span><span class="o">*</span><span class="n">ambient_temperature</span>^<span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">end</span>
 
-<span class="c">% Convert the temperature back to degrees</span><span class="w"></span>
-<span class="n">sky_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sky_temperature</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">273.15</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Convert the temperature back to degrees</span>
+<span class="n">sky_temperature</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sky_temperature</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">273.15</span><span class="p">;</span>
 
-<span class="k">end</span><span class="w"></span>
+<span class="k">end</span>
 
-<span class="k">function</span><span class="w"> </span>[outputArg1,outputArg2]<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">random_function</span><span class="p">(</span>inputArg1,inputArg2<span class="p">)</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>[outputArg1,outputArg2]<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">random_function</span><span class="p">(</span>inputArg1,inputArg2<span class="p">)</span>
 
-<span class="c">% This functions shows the two blank lines space to be left between the</span><span class="w"></span>
-<span class="c">% end of a function and the beginning of the next one.</span><span class="w"></span>
+<span class="c">% This functions shows the two blank lines space to be left between the</span>
+<span class="c">% end of a function and the beginning of the next one.</span>
 </pre></div>
 </div>
 </section>

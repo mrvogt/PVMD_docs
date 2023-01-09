@@ -1906,31 +1906,31 @@ export MDIR=/usr/local/lib/ray/meta/
 <li><p>The function PVMD toolbox script</p></li>
 </ol>
 <p>Below one can find a snippet of the input struct creator function</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">TB_input_creator</span><span class="p">(</span>outputName<span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">TB_input_creator</span><span class="p">(</span>outputName<span class="p">)</span>
 
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Generating Input Struct for TOOLBOX...&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="c">% Needs to be true for the script version to run</span><span class="w"></span>
-<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">script</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Generating Input Struct for TOOLBOX...&#39;</span><span class="p">);</span>
+<span class="c">% Needs to be true for the script version to run</span>
+<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">script</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 
-<span class="c">% If true cell part of toolbox is called</span><span class="w"></span>
-<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">runDeviceOptic</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="c">% If true cell part of toolbox is called</span>
+<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">runDeviceOptic</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 
-<span class="c">% Set to true for genpro simulations</span><span class="w"></span>
-<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">deviceOptic</span><span class="p">.</span><span class="n">runGenPro</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Set to true for genpro simulations</span>
+<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">deviceOptic</span><span class="p">.</span><span class="n">runGenPro</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 
-<span class="c">% Loading GenPRO file, change for new simulations, change if runGenPro is true</span><span class="w"></span>
-<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">deviceOptic</span><span class="p">.</span><span class="n">GenProFile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;MonoPERC.mat&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Loading GenPRO file, change for new simulations, change if runGenPro is true</span>
+<span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">deviceOptic</span><span class="p">.</span><span class="n">GenProFile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;MonoPERC.mat&#39;</span><span class="p">;</span>
 
-<span class="c">% Type of cell selected for simulations</span><span class="w"></span>
-<span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">deviceOptic</span><span class="p">.</span><span class="n">GenProFile</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Type of cell selected for simulations</span>
+<span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">TOOLBOX_input</span><span class="p">.</span><span class="n">deviceOptic</span><span class="p">.</span><span class="n">GenProFile</span><span class="p">;</span>
 
-<span class="k">if</span><span class="w"> </span><span class="nb">contains</span><span class="p">(</span><span class="n">celltype</span><span class="p">,</span><span class="s">&#39;Tandem&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;tandem&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">elseif</span><span class="w"> </span><span class="nb">contains</span><span class="p">(</span><span class="n">celltype</span><span class="p">,</span><span class="s">&#39;Bifacial&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;bifacial&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">else</span><span class="w"></span>
-<span class="w">    </span><span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;normal&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="nb">contains</span><span class="p">(</span><span class="n">celltype</span><span class="p">,</span><span class="s">&#39;Tandem&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;tandem&#39;</span><span class="p">;</span>
+<span class="k">elseif</span><span class="w"> </span><span class="nb">contains</span><span class="p">(</span><span class="n">celltype</span><span class="p">,</span><span class="s">&#39;Bifacial&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;bifacial&#39;</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">celltype</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;normal&#39;</span><span class="p">;</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 <p>Within this function, all variables (logical as well as input data) are assigned and output for use in the toolbox. The logical variable <code class="docutils literal notranslate"><span class="pre">TOOLBOX_input.deviceOptic.runGenPro</span></code> has been set to <code class="docutils literal notranslate"><span class="pre">false</span></code>. This means that GenPro will not be run when using the script version. However, if a user wishes to run GenPro, then this logical value can be changed to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Similarly, this function includes the assignment statements for all the input variables used to run the toolbox and can be changed by the user based on their requirements.</p>
