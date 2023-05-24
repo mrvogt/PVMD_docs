@@ -313,28 +313,7 @@ title="Print to PDF"
 <dl class="mat function">
 <dt class="sig sig-object mat" id="pvmd.1_CELL.CELL_main">
 <span class="sig-prename descclassname"><span class="pre">pvmd.1_CELL.</span></span><span class="sig-name descname"><span class="pre">CELL_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TOOLBOX_input</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pvmd.1_CELL.CELL_main" title="Permalink to this definition">#</a></dt>
-<dd><p>This function is called when the CELL button is pressed.</p>
-<p>The user selects the cell type and the output is the reflectance,
-absorptance in every layer and transmittance as a function of wavelength
-and angle of incidence, both for front and rear-side illumination.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>Cell_output with fields:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>RAT_f: front absorptance (dim1: wavelengths, dim2: angles, dim3: layers)</p></li>
-<li><p>RAT_r: rear absorptance</p></li>
-<li><p>wav: list of wavelenghts</p></li>
-<li><p>aoi: list of angles of inc</p></li>
-<li><p>lay: list of layer names</p></li>
-</ul>
-</div></blockquote>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>struct</p>
-</dd>
-</dl>
+<dd><p>This function is called when the CELL button is pressed. The user selects the cell type and the output is the reflectance, absorptance in every layer and transmittance as a function of wavelength and angle of incidence, both for front and rear-side illumination. Returns ——- struct   Cell_output with fields:       - RAT_f: front absorptance (dim1: wavelengths, dim2: angles, dim3: layers)       - RAT_r: rear absorptance       - wav: list of wavelenghts       - aoi: list of angles of inc       - lay: list of layer names</p>
 </dd></dl>
 
 <section id="module-pvmd.1_CELL.Types">
@@ -348,12 +327,7 @@ and angle of incidence, both for front and rear-side illumination.</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="pvmd.1_CELL.Types.bifa_SHJ_HZB">
 <span class="sig-prename descclassname"><span class="pre">pvmd.1_CELL.Types.</span></span><span class="sig-name descname"><span class="pre">bifa_SHJ_HZB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pvmd.1_CELL.Types.bifa_SHJ_HZB" title="Permalink to this definition">#</a></dt>
-<dd><p>Bottom cell turned bifacial and used for comparison with HZB 2T with
-29.15% efficiency from
-A. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell
-with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370,
-no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.
-Fitted by and adapted into module by MRV</p>
+<dd><p>Bottom cell turned bifacial and used for comparison with HZB 2T with 29.15% efficiency fromA. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370, no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.Fitted by and adapted into module by MRV</p>
 </dd></dl>
 
 <dl class="mat function">
@@ -365,40 +339,25 @@ Fitted by and adapted into module by MRV</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="pvmd.1_CELL.Types.mono_SHJ_HZB">
 <span class="sig-prename descclassname"><span class="pre">pvmd.1_CELL.Types.</span></span><span class="sig-name descname"><span class="pre">mono_SHJ_HZB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pvmd.1_CELL.Types.mono_SHJ_HZB" title="Permalink to this definition">#</a></dt>
-<dd><p>Bottom cell used for comparison with HZB 2T with 29.15% efficiency from
-A. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell
-with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370,
-no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.
-Fitted by and adapted into module by MRV</p>
+<dd><p>Bottom cell used for comparison with HZB 2T with 29.15% efficiency fromA. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370, no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.Fitted by and adapted into module by MRV</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="pvmd.1_CELL.Types.tandem_2T_DT_HZB">
 <span class="sig-prename descclassname"><span class="pre">pvmd.1_CELL.Types.</span></span><span class="sig-name descname"><span class="pre">tandem_2T_DT_HZB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pvmd.1_CELL.Types.tandem_2T_DT_HZB" title="Permalink to this definition">#</a></dt>
-<dd><p>2T cell from HZB 2T with 29.15% efficiency from
-A. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell
-with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370,
-no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.
-Fitted, added rear texutre and adapted into module by MRV</p>
+<dd><p>2T cell from HZB 2T with 29.15% efficiency fromA. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370, no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.Fitted, added rear texutre and adapted into module by MRV</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="pvmd.1_CELL.Types.tandem_2T_HZB">
 <span class="sig-prename descclassname"><span class="pre">pvmd.1_CELL.Types.</span></span><span class="sig-name descname"><span class="pre">tandem_2T_HZB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pvmd.1_CELL.Types.tandem_2T_HZB" title="Permalink to this definition">#</a></dt>
-<dd><p>2T cell from HZB 2T with 29.15% efficiency from
-A. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell
-with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370,
-no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.
-Fitted by and adapted into module by MRV</p>
+<dd><p>2T cell from HZB 2T with 29.15% efficiency fromA. Al-Ashouri et al., “Monolithic perovskite/silicon tandem solar cell with &gt;29% efficiency by enhanced hole extraction,” Science, vol. 370, no. 6522, pp. 1300–1309, Dec. 2020, doi: 10.1126/science.abd4016.Fitted by and adapted into module by MRV</p>
 </dd></dl>
 
 <dl class="mat function">
 <dt class="sig sig-object mat" id="pvmd.1_CELL.Types.tf_perovskite">
 <span class="sig-prename descclassname"><span class="pre">pvmd.1_CELL.Types.</span></span><span class="sig-name descname"><span class="pre">tf_perovskite</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pvmd.1_CELL.Types.tf_perovskite" title="Permalink to this definition">#</a></dt>
-<dd><p>Structure of perovskite/c-Si tandem solar cell
-Reference: ‘Predicting and optimising the energy yield of
-perovskite-on-silicon tandem solar cells under real world conditions’,
-Hörantner, M. T., &amp; Snaith, H. J. (2017).</p>
+<dd><p>Structure of perovskite/c-Si tandem solar cellReference: ‘Predicting and optimising the energy yield of perovskite-on-silicon tandem solar cells under real world conditions’, Hörantner, M. T., &amp; Snaith, H. J. (2017).</p>
 </dd></dl>
 
 </section>
